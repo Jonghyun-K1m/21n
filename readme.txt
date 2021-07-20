@@ -10,8 +10,9 @@ updatenote
 0719
  1. 메인페이지와 서블릿간의 통신확인
   1-a) /hello 와 main.jsp
+  
 0720
- 1. properties파일을 통해 설정확인
+ 1. properties파일을 통해 db설정확인
   1-a) properties 파일은 업로드하지않음
  2. db연결
   2-a) test.java를 통해 mysql과 연결확인
