@@ -1,6 +1,10 @@
 
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class hello
+ * Servlet implementation class url_request
  */
 @WebServlet("/hello")
-public class hello extends HttpServlet {
+public class url_request extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public hello() {
+    public url_request() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +39,11 @@ public class hello extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append(request.getParameter("your_name"));
+		//response.getWriter().append(request.getParameter("Submittype"));
+		
+		//doGet(request, response);
 	}
 
 }
