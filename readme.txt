@@ -16,3 +16,4 @@ updatenote
   1-a) properties 파일은 업로드하지않음
  2. db연결
   2-a) test.java를 통해 mysql과 연결확인
+ todo. jsp->jsp->db 데이터
