@@ -16,4 +16,9 @@ updatenote
   1-a) properties 파일은 업로드하지않음
  2. db연결
   2-a) test.java를 통해 mysql과 연결확인
- todo. jsp->jsp->db 데이터
+TODO. jsp->jsp->db 데이터
+
+0721
+1.  jsp->jsp->db 데이터 조회성공
+ 1-a) 여태한 파일 주석처리 후 업로드
+TODO. 암호화 / 
