@@ -1,0 +1,93 @@
+
+package dao;
+import java.sql.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Properties;
+import config.*;
+
+public class first_dao {
+	
+
+	public first_dao() {
+		
+	}
+ 	public int login(String input_id,String input_pwd) {
+ 		 int result =0;
+		 getProperties getP= new getProperties();
+		 Connection conn = null;
+		 PreparedStatement ps = null;
+		 ResultSet rs = null;
+		try {
+				System.out.println("dao running");
+				
+				Class.forName(getP.get_driver());
+				conn = DriverManager.getConnection(getP.get_url(), getP.get_dbuser(), getP.get_dbpwd());
+				String sql = "select id, pwd from user_db where id = ? ";
+				//	String sql = "insert into user_db value(?,?,?)";
+					ps = conn.prepareStatement(sql);
+					ps.setString(1, input_id);
+			
+					rs = ps.executeQuery();
+
+					
+					
+					if(rs.next()) {
+						String result_id = rs.getString("id");
+						
+						String result_pwd = rs.getString("pwd");
+						if(result_id.equals(input_id)) {
+							if(result_pwd.equals(input_pwd)) {
+								result = 1;// id, pw 일치 성공
+
+							}
+							else
+								result = 2;// 불일치
+						}
+					}
+					else {
+						result = 3;// 없음
+				
+					}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				if(rs!=null) {
+					try {
+						rs.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}	
+				if(ps!=null) {
+					try {
+						ps.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				if(conn!=null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			
+			}	
+		return result;	
+	}
+}
