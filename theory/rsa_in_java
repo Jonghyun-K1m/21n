@@ -1,0 +1,11 @@
+pem : base64
+der : 바이너리
+
+pkcs#1 (pem)
+begin rsa~~ 
+자바지원X
+
+pkcs#8 (pem)
+begin ~~ 
+자바지원O
+
