@@ -30,4 +30,4 @@ TODO -a) 암호화 적용시 jar파일 형식을 적용
 07/22
  1. RSA암호화방식 학습중
   1-a) 자바는 pkcs8형식의 파일 read가능 (헤더다른경우X)
-  2-a) 파일에 저장된 형식 byte단위로 read후 Keyfactory이용 X509방식 
+  1-b) 파일에 저장된 형식 byte단위로 read후 Keyfactory이용 X509방식 
