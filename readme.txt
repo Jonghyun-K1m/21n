@@ -40,4 +40,4 @@ TODO -a) 암호화 적용시 jar파일 형식을 적용 ( 7/23 완료 )
  1. 07/21 TODO 완료
  2. Client에서 전송시 보내는 형식(폼)에 대해 학습
   TODO. jar파일 호출하여 Client에서 보내는 폼에 암호화 적용
- -참고. https://selfdevelope.tistory.com/183
+
