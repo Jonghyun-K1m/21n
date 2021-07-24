@@ -4,6 +4,7 @@
  2-a) JSP
  2-b) 암호화
  2-c) 인증
+ 2-d) java
 
 updatenote
 
