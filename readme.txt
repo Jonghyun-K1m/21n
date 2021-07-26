@@ -44,3 +44,4 @@ TODO -a) 암호화 적용시 jar파일 형식을 적용 ( 7/23 완료 )
   
   07/26
   1. js학습
+  https://jirak.net/wp/jsp-%EC%97%90%EC%84%9C-java-class-%ED%98%B8%EC%B6%9C-%ED%95%98%EA%B8%B0/
