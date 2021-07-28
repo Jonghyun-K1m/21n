@@ -1,5 +1,7 @@
 package home;
+import com.jh.Crpto.*;
 
+import com.jh.config.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.first_dao;
+
 
 /**
  * Servlet implementation class url_request
@@ -41,12 +44,34 @@ public class LoginCheck extends HttpServlet {
     }
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("service called");
-		String id = request.getParameter("beans_id");
-		String pw = request.getParameter("beans_pwd");
+        System.out.println("Login Chekc service called");
+        
+        
+
+		//String id = request.getParameter("beans_id");
+		//String pw = request.getParameter("beans_pwd");
+		String id = (String) request.getSession().getAttribute("id");
+		String pw = (String) request.getSession().getAttribute("pwd");
+		System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmm");	
+
+		System.out.println(id);
+		System.out.println(pw);
+		
+
+		hyunCrypto ac=new hyunCrypto();
+		trim trim=new trim();
+    	String privatekey;
+    	String unpwd;
+    	getProperties au=new getProperties();
+
+    	privatekey=trim.trim_request(2);
+    	unpwd=ac.decode(pw,privatekey);       
+		
+    	System.out.println(unpwd);
+		System.out.println("ssssssssssssssssssssssssssss");	
 
 		first_dao LoginDao=new first_dao();
-		int ResultValue=LoginDao.login(id,pw);
+		int ResultValue=LoginDao.login(id,unpwd);
 		switch(ResultValue){
 		case 1 :
 			System.out.println("Login Check access");
