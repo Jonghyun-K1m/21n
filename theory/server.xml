@@ -1,0 +1,4 @@
+<!-- add host-->
+      <Host appBase="webapps" autoDeploy="true" name="호스트이름" unpackWARs="true">
+          <Context docBase="디렉토리" path="" reloadable="true"/>
+	</Host>
