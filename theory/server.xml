@@ -2,3 +2,17 @@
       <Host appBase="webapps" autoDeploy="true" name="호스트이름" unpackWARs="true">
           <Context docBase="디렉토리" path="" reloadable="true"/>
 	</Host>
+
+
+
+<Context docBase="C:\Users\Desktop\dir" path="/new" reloadable="true" />
+
+
+2. context.xml 수정하기
+
+<Resources>
+
+<PreResources className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/new" base="C:\Users\Desktop\dir"/>
+
+ </Resources>
+
