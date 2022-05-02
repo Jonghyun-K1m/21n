@@ -52,7 +52,6 @@ public class LoginCheck extends HttpServlet {
 		//String pw = request.getParameter("beans_pwd");
 		String id = (String) request.getSession().getAttribute("id");
 		String pw = (String) request.getSession().getAttribute("pwd");
-		System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmm");	
 
 		System.out.println(id);
 		System.out.println(pw);
@@ -68,16 +67,16 @@ public class LoginCheck extends HttpServlet {
     	unpwd=ac.decode(pw,privatekey);       
 		
     	System.out.println(unpwd);
-		System.out.println("ssssssssssssssssssssssssssss");	
 
 		first_dao LoginDao=new first_dao();
 		int ResultValue=LoginDao.login(id,unpwd);
+		
 		switch(ResultValue){
 		case 1 :
 			System.out.println("Login Check access");
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
-			session.setMaxInactiveInterval(100);  // session 나이설정
+			session.setMaxInactiveInterval(100);  // 
 			response.sendRedirect("LoginSuccess.jsp");
 			break;
 		case 2:
