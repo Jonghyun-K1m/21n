@@ -6,7 +6,7 @@
 <%@ page import ="com.jh.config.*" %>
 <%@ page import ="com.jh.Crpto.*" %>
 <%@ page import ="dto.*" %>
-
+<%@ page session="true" %>
 	
 <jsp:useBean class="beans.firstBeans" scope="page" id="hello"> 
 <jsp:setProperty property="*" name="hello" />
@@ -23,9 +23,12 @@
 
 		<%
 		//<jsp:forward page="LoginCheck"></jsp:forward>
+			//		String id_str = session.getId();
 			String id=request.getParameter("beans_id");
 			String pwd=request.getParameter("beans_pwd");
 
+
+		
 			hyunCrypto ac=new hyunCrypto();
 			trim trim=new trim();
 	    	String publicKey;
