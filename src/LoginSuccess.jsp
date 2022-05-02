@@ -13,11 +13,11 @@
 			out.print(id + "님 환영합니다.");
 			out.print("<a href='LogOut'>로그아웃</a>");
 		} else {
-			response.sendRedirect("test.jsp");
+			response.sendRedirect("LoginPage.jsp");
 		}
 	%>
 	
-				<form action="db_insert" method="POST"> send to db <br/>
+				<form action="db_insert_action.jsp" method="POST"> send to db <br/>
 				 name<input type="text" name="stock_a"/><br/>
 				volume<input type="text" name="stock_b"/><br/>
 				 <input type="submit" value="전송"/> 
