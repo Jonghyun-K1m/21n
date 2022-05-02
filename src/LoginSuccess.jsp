@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%
-		String id = (String) session.getAttribute("id"); // Object의 장점 : 다형성
+		String id = (String) session.getAttribute("id"); // 
 		if (id != null) { // login체크로 url을 알더라도 들어오는 것을 방지
 			out.print(id + "님 환영합니다.");
 			out.print("<a href='LogOut'>로그아웃</a>");
