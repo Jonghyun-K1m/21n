@@ -1,6 +1,8 @@
 package home;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +40,13 @@ public class db_select extends HttpServlet {
 			System.out.println(list.get(i).getName());
 			System.out.println(list.get(i).getCount());
 		}
+		PrintWriter out = response.getWriter();
+		
+		out.println("<html><head></head><body>");
+		out.println("<br><a href='LoginSuccess.jsp'>return</a>");
+		out.println("</body></html>");
+		out.close();
+
         super.service(request, response);
         
     }
@@ -47,6 +56,8 @@ public class db_select extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+
+	
 	}
 
 
